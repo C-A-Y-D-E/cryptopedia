@@ -60,7 +60,7 @@ const Menu = ({ setHeader }) => {
           <div class="text-white">
             <div class="my-2">
               <a
-                href="https://dribbble.com/omnicreativora"
+                href="#"
                 target="_blank"
                 rel="noreferrer"
                 class="no-underline text-lg font-bold hover:text-accent"
@@ -70,7 +70,7 @@ const Menu = ({ setHeader }) => {
             </div>
             <div class="my-2">
               <a
-                href="https://www.behance.net/AnggitYuniar"
+                href="#"
                 target="_blank"
                 rel="noreferrer"
                 class="no-underline text-lg font-bold hover:text-accent"
@@ -80,7 +80,7 @@ const Menu = ({ setHeader }) => {
             </div>
             <div class="my-2">
               <a
-                href="https://www.facebook.com/omnicreativora/"
+                href="#"
                 target="_blank"
                 rel="noreferrer"
                 class="no-underline text-lg font-bold hover:text-accent"
@@ -90,7 +90,7 @@ const Menu = ({ setHeader }) => {
             </div>
             <div class="my-2">
               <a
-                href="https://www.instagram.com/omnicreativora/"
+                href="#"
                 target="_blank"
                 rel="noreferrer"
                 class="no-underline text-lg font-bold hover:text-accent"
@@ -100,7 +100,7 @@ const Menu = ({ setHeader }) => {
             </div>
             <div class="my-2">
               <a
-                href="https://twitter.com/omnicreativora"
+                href="#"
                 target="_blank"
                 rel="noreferrer"
                 class="no-underline text-lg font-bold hover:text-accent"
