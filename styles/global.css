@@ -13,4 +13,17 @@ body {
   h2 {
     @apply text-3xl lg:text-5xl;
   }
+
+  h4 {
+    @apply text-xl lg:text-2xl font-semibold;
+  }
+}
+
+.row-letter {
+  /* font-size: 28rem;
+  font-weight: 500;
+  position: relative;
+  letter-spacing: -0.8rem;
+  display: inline-block; */
+  white-space: nowrap;
 }

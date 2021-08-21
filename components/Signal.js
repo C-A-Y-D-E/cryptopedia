@@ -10,13 +10,11 @@ import UAParser from "ua-parser-js";
 const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 1300 },
-    items: 2,
-    paritialVisibilityGutter: 60,
+    items: 4,
   },
   laptop: {
     breakpoint: { max: 1300, min: 1024 },
-    items: 3,
-    paritialVisibilityGutter: 60,
+    items: 4,
   },
   tablet: {
     breakpoint: { max: 1024, min: 700 },
@@ -29,13 +27,13 @@ const responsive = {
 };
 const Signal = ({ deviceType }) => {
   return (
-    <div className="mt-20">
+    <div className="mt-8">
       <div className="flex items-center gap-6  flex-wrap">
         <div className="lg:flex-1 relative">
           <FadeUp>
             <h2 className=" relative  inline-block leading-snug">
-              <span className="text-accent">Predict</span> changes and <br />{" "}
-              signal to sell or{" "}
+              <span className="text-accent">Predict</span> changes and{" "}
+              <br className="lg:hidden 2xl:inline-block" /> signal to sell or{" "}
               <span className="relative">
                 buy.{" "}
                 <img
@@ -59,12 +57,13 @@ const Signal = ({ deviceType }) => {
       </div>
 
       <div className="mt-20 ">
-        {/* <Carousel
+        <Carousel
           ssr
           deviceType={deviceType}
           responsive={responsive}
-          partialVisbile
-          className="flex items-center gap-20"
+          showDots={false}
+          arrows={false}
+          itemClass="mx-4"
         >
           <CoinCard />
           <CoinCard />
@@ -73,7 +72,7 @@ const Signal = ({ deviceType }) => {
           <CoinCard />
           <CoinCard />
           <CoinCard />
-        </Carousel> */}
+        </Carousel>
       </div>
 
       <div className="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
@@ -89,7 +88,7 @@ export default Signal;
 
 const CoinCard = () => {
   return (
-    <div className="bg-dark p-8 ">
+    <div className="bg-dark p-8 select-none">
       <div className="flex gap-6">
         <div>
           <h4 className="flex items-center gap-4 text-lg">
@@ -97,8 +96,8 @@ const CoinCard = () => {
           </h4>
           <div className="text-xl mt-4">$8.313</div>
         </div>
-        <div className="ml-auto">
-          <img src="/graph.svg" />
+        <div className="ml-auto ">
+          <img src="/graph.svg " className="select-none" />
         </div>
       </div>
     </div>

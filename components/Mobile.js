@@ -44,7 +44,7 @@ const Mobile = () => {
   };
 
   return (
-    <div className="mt-56">
+    <div className="mt-20 lg:mt-56">
       <div
         ref={ref}
         className="bg-dark p-8 lg:py-16 lg:px-24 flex flex-wrap-reverse gap-4 items-center relative z-20"
@@ -57,7 +57,7 @@ const Mobile = () => {
         >
           <motion.h2 variants={children} className=" relative  inline-block">
             <span className="text-accent">Optimized </span>
-            for every <br /> screen
+            for every <br className=" hidden lg:block" /> screen
           </motion.h2>
           <motion.div
             variants={children}
@@ -74,7 +74,7 @@ const Mobile = () => {
             transition={{ delay: 1.8 }}
           >
             <span>Get the App</span>
-            <div className="flex gap-6 mt-4">
+            <div className="flex gap-6 mt-4 flex-wrap">
               <img src="/google.png" />
               <img src="/apple.png" />
             </div>

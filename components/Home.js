@@ -2,6 +2,7 @@ import React from "react";
 import { BiMouse } from "react-icons/bi";
 
 import { motion } from "framer-motion";
+
 const Home = () => {
   return (
     <div
@@ -29,11 +30,12 @@ const Home = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1, duration: 0.6 }}
-          className="text-4xl md:text-5xl 2xl:text-6xl font-bold relative z-20 leading-relaxed"
+          className="text-4xl break-words md:text-5xl 2xl:text-6xl font-bold relative z-20 leading-relaxed"
         >
           This is an <span className="text-accent">Intelligent</span> <br />{" "}
           Trading Platform
         </motion.h1>
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -67,8 +69,8 @@ const Home = () => {
           // initial={{ y: 0 }}
           animate={{ y: -30 }}
           transition={{ flip: Infinity, duration: 1.5 }}
-          src="/mac.png"
-          className="relative z-20 w-full"
+          src="/mac2.png"
+          className="relative z-20 w-full lg:-mt-44 lg:w-[1500px]"
         />
         {/* <div className="absolute -top-72 -right-20 z-[1]">
           <img src="/blobs/2.svg" />

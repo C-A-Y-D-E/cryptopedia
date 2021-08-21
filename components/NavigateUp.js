@@ -19,12 +19,15 @@ const Example = () => {
 
   return (
     <Link href="/#home">
-      <div className="fixed bottom-4 right-4 z-50 h-[80px] w-[80px] ">
+      <div
+        style={{ zIndex: "9999" }}
+        className="fixed bottom-4 right-4  h-[80px] w-[80px] cursor-pointer "
+      >
         <>
           {isComplete && (
             <FiArrowUp className="absolute text-3xl left-[42%] top-[40%]  -translate-x-1/2 -translate-y-1/2" />
           )}
-          <svg className="progress-icon" viewBox="0 0 60 60">
+          <svg className="progress-icon shadow-lg" viewBox="0 0 60 60">
             <motion.path
               fill="none"
               strokeWidth="5"

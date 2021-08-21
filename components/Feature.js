@@ -47,7 +47,9 @@ const FeatureCard = () => {
         </div>
       </div>
       <div className="flex flex-col gap-4">
-        <h4 className="text-2xl font-semibold">Time zones ain’t no thing</h4>
+        <h4 className="text-xl lg:text-2xl font-semibold">
+          Time zones ain’t no thing
+        </h4>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mattis et sed
           nam sem tellus erat.
