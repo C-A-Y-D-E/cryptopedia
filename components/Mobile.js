@@ -32,7 +32,7 @@ const Mobile = () => {
     show: {
       opacity: 1,
       transition: {
-        staggerChildren: 1.6,
+        staggerChildren: 1.4,
         delay: 1,
       },
     },
@@ -71,7 +71,7 @@ const Mobile = () => {
           <motion.div
             className="mt-8"
             variants={children}
-            transition={{ delay: 1.8 }}
+            transition={{ delay: 1.6 }}
           >
             <span>Get the App</span>
             <div className="flex gap-6 mt-4 flex-wrap">

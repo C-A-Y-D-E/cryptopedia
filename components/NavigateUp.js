@@ -20,7 +20,7 @@ const Example = () => {
   return (
     <Link href="/#home">
       <div
-        style={{ zIndex: "9999" }}
+        style={{ zIndex: "99" }}
         className="fixed bottom-4 right-4  h-[80px] w-[80px] cursor-pointer "
       >
         <>

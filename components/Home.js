@@ -30,7 +30,7 @@ const Home = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1, duration: 0.6 }}
-          className="text-4xl break-words md:text-5xl 2xl:text-6xl font-bold relative z-20 leading-relaxed"
+          className="text-4xl break-words leading-snug md:text-5xl 2xl:leading-snug 2xl:text-6xl font-bold relative z-20 "
         >
           This is an <span className="text-accent">Intelligent</span> <br />{" "}
           Trading Platform
