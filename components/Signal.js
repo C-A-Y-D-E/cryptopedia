@@ -47,7 +47,7 @@ const Signal = ({ deviceType }) => {
 
         <div className="lg:flex-1 ">
           <FadeUp amount={0.2}>
-            <p className="max-w-[500px] ml-auto">
+            <p className="max-w-[500px] ml-auto mt-0">
               We believe that your ability to take good investment decisions
               shouldn’t require you to waste precious time on digging into
               contracts or reddit and countless social channels.
@@ -76,9 +76,20 @@ const Signal = ({ deviceType }) => {
       </div>
 
       <div className="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-        <SpecialityCard br={true} />
-        <SpecialityCard br={true} />
-        <SpecialityCard />
+        <SpecialityCard
+          heading="Liquidity"
+          text="Deep order book liquidity in all market condition"
+          br={true}
+        />
+        <SpecialityCard
+          heading="Speed"
+          text="2.5m Tps matching engine 50 micro second core letency"
+          br={true}
+        />
+        <SpecialityCard
+          heading="Security"
+          text="ISO/IEC 27001:2013, PCI:DSS v3.2.1, Level 1 compilance. Cryptocurrecy Security Standard "
+        />
       </div>
     </div>
   );
@@ -104,7 +115,7 @@ const CoinCard = () => {
   );
 };
 
-const SpecialityCard = ({ br }) => {
+const SpecialityCard = ({ br, heading, text }) => {
   return (
     <div
       className={`${
@@ -117,11 +128,9 @@ const SpecialityCard = ({ br }) => {
         <div className="h-[50px] w-[50px] rounded-full bg-accent/40 flex items-center justify-center text-3xl">
           <RiMoneyDollarCircleFill />
         </div>
-        <h5 className="text-2xl">Liquidity</h5>
+        <h5 className="text-2xl">{heading}</h5>
       </div>
-      <div className="mt-6">
-        Deep order book liquidity in all market conditions
-      </div>
+      <div className="mt-6 text-gray-300">{text}</div>
     </div>
   );
 };

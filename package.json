@@ -6,6 +6,12 @@
     "start": "next start"
   },
   "dependencies": {
+    "@headlessui/react": "^1.4.0",
+    "@mdx-js/loader": "^1.6.22",
+    "@mdx-js/react": "^1.6.22",
+    "@next/mdx": "^11.1.0",
+    "d3-format": "^3.0.1",
+    "d3-time-format": "^4.0.0",
     "framer-motion": "^4.1.17",
     "next": "latest",
     "react": "^17.0.2",
@@ -13,6 +19,8 @@
     "react-icons": "^4.2.0",
     "react-intersection-observer": "^8.32.0",
     "react-multi-carousel": "^2.6.3",
+    "react-super-responsive-table": "^5.2.0",
+    "react-table": "^7.7.0",
     "ua-parser-js": "^0.7.28"
   },
   "devDependencies": {

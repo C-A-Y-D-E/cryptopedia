@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,500;0,600;1,200&display=swap");
 body {
   background-color: black;
   color: white;
@@ -17,6 +18,33 @@ body {
   h4 {
     @apply text-xl lg:text-2xl font-semibold;
   }
+
+  table {
+    @apply table-auto w-full;
+  }
+
+  tr:not(:last-child) {
+    @apply border-b border-accent/20;
+  }
+
+  thead tr {
+    @apply h-12 border-b border-accent/20;
+  }
+
+  th {
+    @apply h-[30px]  text-gray-400;
+  }
+  tbody {
+    @apply mt-16;
+  }
+
+  tbody tr td {
+    @apply py-4;
+  }
+
+  td {
+    @apply text-center;
+  }
 }
 
 .row-letter {
@@ -26,4 +54,8 @@ body {
   letter-spacing: -0.8rem;
   display: inline-block; */
   white-space: nowrap;
+}
+
+.responsiveTable tbody tr {
+  border: 1px solid rgba(38, 174, 96, 0.2) !important;
 }

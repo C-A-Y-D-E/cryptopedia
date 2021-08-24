@@ -10,6 +10,9 @@ module.exports = {
       dark: "#0A0909",
       ...colors,
     },
+    fontFamily: {
+      monster: ["Raleway"],
+    },
   },
   variants: {
     extend: {},

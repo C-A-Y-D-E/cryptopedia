@@ -5,10 +5,7 @@ import { motion } from "framer-motion";
 
 const Home = () => {
   return (
-    <div
-      className="flex flex-wrap lg:flex-nowrap  mt-40 relative w-full"
-      id="home"
-    >
+    <div className="flex flex-wrap lg:flex-nowrap  mt-40 relative w-full">
       <div className="">
         <motion.div
           initial={{ opacity: 0 }}
@@ -42,9 +39,10 @@ const Home = () => {
           transition={{ delay: 1.2, duration: 0.6 }}
           className="mt-16 max-w-[440px] text-base"
         >
-          Meet the most complete and easy to use tracking and analytics tool for
-          the BSC and ETH networks, packed with never before seen features and
-          state of the art UX to streamline your crypto investing workflow.
+          We aim to deliver a first of its kind platform to enable easy and
+          simplistic investment methods. From analytical tools to advantageous
+          information to licence a warrant for an increase in safety and profits
+          from investments.
         </motion.div>
         <div className="relative mt-16 hidden lg:block ">
           <motion.div

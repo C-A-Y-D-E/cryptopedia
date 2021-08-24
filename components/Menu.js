@@ -6,7 +6,7 @@ const Menu = ({ setHeader }) => {
     <motion.div
       exit={{ opacity: 0 }}
       layoutId="h"
-      className="fixed h-full w-full inset-0  overflow-y-auto"
+      className="fixed h-full w-full inset-0  overflow-y-auto overflow-x-hidden"
       style={{ zIndex: 999 }}
     >
       <motion.div

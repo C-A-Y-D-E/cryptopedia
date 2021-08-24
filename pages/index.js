@@ -6,6 +6,7 @@ import Infrastrusture from "components/Infrastrusture";
 import Feature from "components/Feature";
 import Roadmap from "components/Roadmap";
 import Mobile from "components/Mobile";
+import Video from "components/Video";
 import FAQ from "components/FAQ";
 import Footer from "components/Footer";
 import NavigateUp from "components/NavigateUp";
@@ -22,14 +23,17 @@ export default function App() {
         {header && <Menu setHeader={setHeader} />}
       </AnimatePresence>
       <div
+        id="home"
         className={`container mx-auto px-8 lg:px-16 xl:px-20  flex flex-col ${
           header ? "hidden" : "block"
         }`}
       >
         <Home />
         <Signal />
+
         <Tokenomics />
         <Infrastrusture />
+        <Video />
         <Feature />
         <Roadmap />
         <Mobile />

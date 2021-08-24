@@ -3,7 +3,7 @@ import FadeUp from "components/FadeUp";
 import { FiSunrise } from "react-icons/fi";
 const Feature = () => {
   return (
-    <div className="mt-0">
+    <div className="mt-20 lg:mt-44">
       <div className="  relative">
         <FadeUp>
           <h2 className=" relative  inline-block">
@@ -26,11 +26,11 @@ const Feature = () => {
       </div>
       <FadeUp amount={0.4}>
         <div className="mt-20 grid grid-cols-1 sm:grid-cols-2 gap-16">
-          <FeatureCard />
-          <FeatureCard />
+          <FeatureCard title="Enhanced Cryptocurrency market information" />
+          <FeatureCard title="Decentralised exchange toolkit " />
 
-          <FeatureCard />
-          <FeatureCard />
+          <FeatureCard title="Mobile app and wallet " />
+          <FeatureCard title="Live trading" />
         </div>
       </FadeUp>
     </div>
@@ -38,7 +38,7 @@ const Feature = () => {
 };
 
 export default Feature;
-const FeatureCard = () => {
+const FeatureCard = ({ title, text }) => {
   return (
     <div className="grid gap-12" style={{ gridTemplateColumns: "auto 1fr" }}>
       <div className="flex items-center justify-center">
@@ -47,10 +47,8 @@ const FeatureCard = () => {
         </div>
       </div>
       <div className="flex flex-col gap-4">
-        <h4 className="text-xl lg:text-2xl font-semibold">
-          Time zones ain’t no thing
-        </h4>
-        <p>
+        <h4 className="text-xl lg:text-2xl font-semibold">{title}</h4>
+        <p className="mt-0">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mattis et sed
           nam sem tellus erat.
         </p>
