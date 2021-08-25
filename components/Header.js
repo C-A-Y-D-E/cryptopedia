@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { VscListSelection } from "react-icons/vsc";
-
+import Link from "next/link";
 import { motion } from "framer-motion";
 const Header = ({ setHeader }) => {
   const [header, setNav] = useState(false);
@@ -26,7 +26,9 @@ const Header = ({ setHeader }) => {
       style={{ zIndex: 99 }}
     >
       <div className="flex items-center justify-between text-2xl lg:text-4xl my-6">
-        <div>Cryptopedia</div>
+        <Link href="/">
+          <a>Cryptopedia</a>
+        </Link>
         <div className="cursor-pointer" onClick={() => setHeader(true)}>
           <VscListSelection />
         </div>

@@ -8,32 +8,37 @@ const CoinTable = () => {
       <Thead>
         <Tr>
           <Th>
-            <div className="flex items-center gap-2 justify-start lg:justify-center h-[50px]">
+            <div className="flex items-center gap-2 justify-start lg:justify-center lg:h-[50px]">
               <MdUnfoldMore /> #
             </div>
           </Th>
           <Th>
-            <div className="flex items-center gap-2 justify-start lg:justify-center h-[50px]">
+            <div className="flex items-center gap-2 justify-start lg:justify-center lg:h-[50px]">
               <MdUnfoldMore /> Coin
             </div>
           </Th>
           <Th>
-            <div className="flex items-center gap-2 justify-start lg:justify-center h-[50px]">
+            <div className="flex items-center gap-2 justify-start lg:justify-center lg:h-[50px]">
               <MdUnfoldMore /> Marker Cap
             </div>
           </Th>
           <Th>
-            <div className="flex items-center gap-2 justify-start lg:justify-center h-[50px]">
+            <div className="flex items-center gap-2 justify-start lg:justify-center lg:h-[50px]">
               <MdUnfoldMore /> Volume 24h
             </div>
           </Th>
           <Th>
-            <div className="flex items-center gap-2 justify-start lg:justify-center h-[50px]">
+            <div className="flex items-center gap-2 justify-start lg:justify-center lg:h-[50px]">
+              <MdUnfoldMore /> Price
+            </div>
+          </Th>
+          <Th>
+            <div className="flex items-center gap-2 justify-start lg:justify-center lg:h-[50px]">
               <MdUnfoldMore /> Circulating Supply
             </div>
           </Th>
           <Th>
-            <div className="flex items-center gap-2 justify-start lg:justify-center h-[50px]">
+            <div className="flex items-center gap-2 justify-start lg:justify-center lg:h-[50px]">
               <MdUnfoldMore /> Last 7 Days
             </div>
           </Th>
@@ -41,6 +46,7 @@ const CoinTable = () => {
       </Thead>
       <Tbody>
         <Tr>
+          <Td>1</Td>
           <Td>
             <Currency />
           </Td>
@@ -59,6 +65,7 @@ const CoinTable = () => {
           </Td>
         </Tr>
         <Tr>
+          <Td>2</Td>
           <Td>
             <Currency />
           </Td>
@@ -77,6 +84,7 @@ const CoinTable = () => {
           </Td>
         </Tr>
         <Tr>
+          <Td>3</Td>
           <Td>
             <Currency />
           </Td>
@@ -109,12 +117,7 @@ const Currency = () => {
         src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png"
       />
       <div class="flex items-center gap-3">
-        <p
-          font-weight="semibold"
-          color="text"
-          font-size="1"
-          class="sc-1eb5slv-0 hKkaxT"
-        >
+        <p font-weight="semibold" color="text" font-size="1" class="font-bold">
           Bitcoin
         </p>
       </div>

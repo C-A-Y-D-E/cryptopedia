@@ -21,7 +21,7 @@ const Infrastrusture = () => {
         </div>
       </FadeUp>
       <FadeUp>
-        <motion.div style={{ x: xPosAnim }} className="relative lg:-mt-20">
+        <motion.div style={{ x: xPosAnim }} className="relative lg:-mt-48">
           <img src="/trade.png" className="mx-auto z-20 relative" />
           {/* <img src="/blobs/big.svg" className="absolute -top-48 z-10" /> */}
         </motion.div>

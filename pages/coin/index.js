@@ -35,68 +35,74 @@ const CMC = () => {
         </div>
       </div>
 
-      <div className="container mx-auto px-8 lg:px-16 xl:px-20 -mt-24">
-        <div className=" rounded-lg bg-dark  h-[200px] border border-accent/20 ">
-          <div className="flex p-8 gap-8 h-full w-full items-center justify-center">
-            <div className="flex gap-5 items-center">
-              <div>
-                <img
-                  src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png"
-                  className="w-[40px]"
-                />
-              </div>
-              <div className="flex flex-col gap-4">
-                <span className="font-bold">Bitcoin</span>
-                <div className="text-3xl font-bold">
-                  <sup>$ </sup>7,204<sup>.44</sup>
+      <div className="container mx-auto   -mt-24">
+        <div className="px-8 hidden md:block lg:px-16 xl:px-20">
+          <div className=" rounded-lg bg-dark  border border-accent/20 ">
+            <div className="flex p-8 gap-16 flex-wrap h-full w-full items-center justify-center">
+              <div className="flex gap-5 items-center">
+                <div>
+                  <img
+                    src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png"
+                    className="w-[40px]"
+                  />
+                </div>
+                <div className="flex flex-col gap-4">
+                  <span className="font-bold">Bitcoin</span>
+                  <div className="text-3xl font-bold">
+                    <sup>$ </sup>7,204<sup>.44</sup>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="flex gap-5 items-center">
-              <div>
-                <img
-                  src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png"
-                  className="w-[40px]"
-                />
-              </div>
-              <div className="flex flex-col gap-4">
-                <span className="font-bold">Bitcoin</span>
-                <div className="text-3xl font-bold">
-                  <sup>$ </sup>7,204<sup>.44</sup>
+              <div className="flex gap-5 items-center">
+                <div>
+                  <img
+                    src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png"
+                    className="w-[40px]"
+                  />
+                </div>
+                <div className="flex flex-col gap-4">
+                  <span className="font-bold">Bitcoin</span>
+                  <div className="text-3xl font-bold">
+                    <sup>$ </sup>7,204<sup>.44</sup>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="flex gap-5 items-center">
-              <div>
-                <img
-                  src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png"
-                  className="w-[40px]"
-                />
-              </div>
-              <div className="flex flex-col gap-4">
-                <span className="font-bold">Bitcoin</span>
-                <div className="text-3xl font-bold">
-                  <sup>$ </sup>7,204<sup>.44</sup>
+              <div className="flex gap-5 items-center">
+                <div>
+                  <img
+                    src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png"
+                    className="w-[40px]"
+                  />
+                </div>
+                <div className="flex flex-col gap-4">
+                  <span className="font-bold">Bitcoin</span>
+                  <div className="text-3xl font-bold">
+                    <sup>$ </sup>7,204<sup>.44</sup>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="flex gap-5 items-center">
-              <div>
-                <img
-                  src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png"
-                  className="w-[40px]"
-                />
-              </div>
-              <div className="flex flex-col gap-4">
-                <span className="font-bold">Bitcoin</span>
-                <div className="text-3xl font-bold">
-                  <sup>$ </sup>7,204<sup>.44</sup>
+              <div className="flex gap-5 items-center">
+                <div>
+                  <img
+                    src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png"
+                    className="w-[40px]"
+                  />
+                </div>
+                <div className="flex flex-col gap-4">
+                  <span className="font-bold">Bitcoin</span>
+                  <div className="text-3xl font-bold">
+                    <sup>$ </sup>7,204<sup>.44</sup>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div className="p-4 mt-20 rounded-lg">
+        <div className="p-4 mt-44 lg:mt-24 rounded-lg  lg:px-16 xl:px-20">
+          <h2 className=" relative  inline-block leading-snug mb-0 lg:mb-6 ">
+            <span className="text-accent">Top 10 </span>
+            <br /> Cryptocurrency
+          </h2>
           <CoinTable />
         </div>
       </div>

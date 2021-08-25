@@ -49,16 +49,16 @@ const Menu = ({ setHeader }) => {
             </Link>
           </div>
           <div class="py-3 md:py-5" onClick={() => setHeader(false)}>
-            <Link href="/#roadmap">
+            <Link href="/#features">
               <a class="no-underline hover:text-accent">
-                <span class="text-3xl md:text-6xl font-semibold">Roadmap</span>
+                <span class="text-3xl md:text-6xl font-semibold">Features</span>
               </a>
             </Link>
           </div>
           <div class="py-3 md:py-5" onClick={() => setHeader(false)}>
-            <Link href="/#features">
+            <Link href="/#roadmap">
               <a class="no-underline hover:text-accent">
-                <span class="text-3xl md:text-6xl font-semibold">Features</span>
+                <span class="text-3xl md:text-6xl font-semibold">Roadmap</span>
               </a>
             </Link>
           </div>

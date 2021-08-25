@@ -55,10 +55,12 @@ body {
   display: inline-block; */
   white-space: nowrap;
 }
-/* 
-.responsiveTable tbody tr {
-  border: 1px solid rgba(38, 174, 96, 0.2) !important;
-} */
+
+@media (max-width: 768px) {
+  .responsiveTable tbody tr {
+    border: 1px solid rgba(38, 174, 96, 0.2) !important;
+  }
+}
 
 .card-shadow {
   box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.3);
