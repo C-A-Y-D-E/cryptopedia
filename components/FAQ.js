@@ -8,7 +8,7 @@ const FAQ = () => {
     <div className="mt-20 lg:mt-44 " id="faq">
       <div className="flex flex-wrap gap-16">
         <div className="  relative lg:flex-1">
-          <h2 className=" relative  inline-block">
+          <h2 className=" relative  inline-block leading-snug">
             Frquently <br /> Asked{" "}
             <span className="text-accent">Question </span>
           </h2>

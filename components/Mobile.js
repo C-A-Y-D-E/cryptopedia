@@ -55,7 +55,10 @@ const Mobile = () => {
           initial="hidden"
           className="  relative"
         >
-          <motion.h2 variants={children} className=" relative  inline-block">
+          <motion.h2
+            variants={children}
+            className=" relative  inline-block leading-snug"
+          >
             <span className="text-accent">Optimized </span>
             for every <br className=" hidden lg:block" /> screen
           </motion.h2>
