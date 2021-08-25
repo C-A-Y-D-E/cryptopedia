@@ -1,12 +1,13 @@
 import React from "react";
 import { FiX } from "react-icons/fi";
 import { motion } from "framer-motion";
+import Link from "next/link";
 const Menu = ({ setHeader }) => {
   return (
     <motion.div
       exit={{ opacity: 0 }}
       layoutId="h"
-      className="fixed h-full w-full inset-0  overflow-y-auto overflow-x-hidden"
+      className="fixed h-full bg-dark w-full inset-0  overflow-y-auto overflow-x-hidden"
       style={{ zIndex: 999 }}
     >
       <motion.div
@@ -24,35 +25,42 @@ const Menu = ({ setHeader }) => {
         class="max-w-screen-lg mx-auto px-10 md:px-6 py-24 lg:py-16 min-h-full flex items-center flex-col md:flex-row "
       >
         <motion.div class="w-full md:w-9/12">
-          <div class="py-3 md:py-5">
-            <a class="no-underline hover:text-accent" href="/">
-              <span class="text-3xl md:text-6xl font-semibold">Home</span>
-            </a>
+          <div class="py-3 md:py-5" onClick={() => setHeader(false)}>
+            <Link href="/#home">
+              <a class="no-underline hover:text-accent">
+                <span class="text-3xl md:text-6xl font-semibold">Home</span>
+              </a>
+            </Link>
           </div>
-          <div class="py-3 md:py-5">
-            <a class="no-underline hover:text-accent" href="/works">
-              <span class="text-3xl md:text-6xl font-semibold">Works</span>
-            </a>
+          <div class="py-3 md:py-5" onClick={() => setHeader(false)}>
+            <Link href="/#token">
+              <a class="no-underline hover:text-accent">
+                <span class="text-3xl md:text-6xl font-semibold">
+                  Tokenomics
+                </span>
+              </a>
+            </Link>
           </div>
-          <div class="py-3 md:py-5">
-            <a class="no-underline hover:text-accent" href="/studio">
-              <span class="text-3xl md:text-6xl font-semibold">Studio</span>
-            </a>
+          <div class="py-3 md:py-5" onClick={() => setHeader(false)}>
+            <Link href="/#about">
+              <a class="no-underline hover:text-accent">
+                <span class="text-3xl md:text-6xl font-semibold">About</span>
+              </a>
+            </Link>
           </div>
-          <div class="py-3 md:py-5">
-            <a class="no-underline hover:text-accent" href="/what-we-do">
-              <span class="text-3xl md:text-6xl font-semibold">What We Do</span>
-            </a>
+          <div class="py-3 md:py-5" onClick={() => setHeader(false)}>
+            <Link href="/#roadmap">
+              <a class="no-underline hover:text-accent">
+                <span class="text-3xl md:text-6xl font-semibold">Roadmap</span>
+              </a>
+            </Link>
           </div>
-          <div class="py-3 md:py-5">
-            <a class="no-underline hover:text-accent" href="/manifesto">
-              <span class="text-3xl md:text-6xl font-semibold">Manifesto</span>
-            </a>
-          </div>
-          <div class="py-3 md:py-5">
-            <a class="no-underline hover:text-accent" href="/contact">
-              <span class="text-3xl md:text-6xl font-semibold">Contact</span>
-            </a>
+          <div class="py-3 md:py-5" onClick={() => setHeader(false)}>
+            <Link href="/#features">
+              <a class="no-underline hover:text-accent">
+                <span class="text-3xl md:text-6xl font-semibold">Features</span>
+              </a>
+            </Link>
           </div>
         </motion.div>
         <div class="w-full md:w-1/2 lg:w-1/12 mt-10 md:mt-0">

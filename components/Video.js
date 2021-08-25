@@ -44,7 +44,7 @@ const Mobile = () => {
   };
 
   return (
-    <div className="">
+    <div className="" id="about">
       <div
         ref={ref}
         className="bg-dark  flex flex-wrap items-center border border-accent/20  gap-4  relative z-20"

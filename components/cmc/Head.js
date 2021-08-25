@@ -16,7 +16,6 @@ const Head = () => {
             <sup>$ </sup>7,204<sup>.44</sup>
           </div>
         </div>
-        <div></div>
       </div>
       <div className="flex gap-12 flex-wrap">
         <ul className="flex flex-wrap gap-8">

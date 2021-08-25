@@ -21,7 +21,7 @@ const Header = ({ setHeader }) => {
     <motion.header
       layoutId="h"
       className={`${
-        header ? " shadow" : "sm:bg-transparent "
+        header ? " shadow bg-dark" : "sm:bg-transparent "
       } fixed left-0 right-0 container mx-auto px-8 lg:px-16 transition-all duration-1000`}
       style={{ zIndex: 99 }}
     >

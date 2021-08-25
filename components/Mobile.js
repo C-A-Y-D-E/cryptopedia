@@ -80,12 +80,13 @@ const Mobile = () => {
             </div>
           </motion.div>
         </motion.div>
-        <div className="lg:absolute right-16">
+        <div className="lg:absolute right-16 ">
           <motion.img
             initial="hidden"
             animate={controls}
             variants={mobile}
             src="/iphone.png"
+            className="z-50 relative"
           />
         </div>
       </div>

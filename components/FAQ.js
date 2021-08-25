@@ -5,7 +5,7 @@ import { FiMinus, FiPlus } from "react-icons/fi";
 const FAQ = () => {
   const [active, setActive] = useState(1);
   return (
-    <div className="mt-20 lg:mt-44 ">
+    <div className="mt-20 lg:mt-44 " id="faq">
       <div className="flex flex-wrap gap-16">
         <div className="  relative lg:flex-1">
           <h2 className=" relative  inline-block">
@@ -24,55 +24,40 @@ const FAQ = () => {
           </div>
         </div>
 
-        <div className=" lg:flex-1 flex flex-col gap-4  ">
-          <div className="flex flex-col gap-4 relative z-30">
+        <div className=" lg:flex-1 flex flex-col gap-4  relative">
+          <div className="flex flex-col gap-4  z-30">
             <AnimateSharedLayout>
-              <div className="absolute bottom-0  md:-right-20 z-[-1]">
+              <div className="absolute -bottom-24  md:-right-20 z-[-2]">
                 <img src="/blobs/5.svg" />
               </div>
               <Question
                 heading="Will contract ownership be renounced?"
-                text="We will not be renoucing ownership.  This limits our ability 
-                to implement necessary changes and upgrades without a
-                cumbersome contract migration.  How many projects
-                to as the space continues to change."
+                text="We will not be renoucing ownership.  This limits our ability to implement necessary changes and upgrades without a cumbersome contract migration.  How many projects never recovered after having to migrate from PCS v1 to v2?  A change no one saw coming.  This is only one example of many things we anticipate the need to adapt to as the space continues to change."
                 no={1}
                 active={active}
                 setActive={setActive}
               />
               <hr />
               <Question
-                heading="Will contract ownership be renounced?"
-                text="We will not be renoucing ownership.  This limits our ability 
-                to implement necessary changes and upgrades without a
-                cumbersome contract migration.  How many projects
-                to as the space continues to change."
+                heading="If you're not renouncing, how can I be sure as an investor that I won't be scammed or rugged?"
+                text={[
+                  "Renouncing ownership has become the norm in the fraud-filled BSC space but in reality is a gimmick that only provides the illusion of safety.  We have employed several layers of protection for potential investors.  The LP pool will be locked.",
+                  ,
+                  <br />,
+                  <br />,
+                  "Our contract code has been audited for security vulnerabilities.  After launch, we will be seeking even higher levels of auditing from CertiK.  The core officer team is fully doxxed.  The marketing and development wallets are only accessible through multi-sig technology which must be signed by all members of the officer team to release any funds. ",
+                  ,
+                  <br />,
+                  <br />,
+                  "We are just as sick and tired of the proliferation of fraud and scams as anyone else.  Our mission, our identity, and our singular goal is to change this unsavory reality in every way that we can.  We understand trust is hard to come by in this space, we only ask for the opportunity to earn it from each and every investor.",
+                  ,
+                  <br />,
+                ]}
                 no={2}
                 active={active}
                 setActive={setActive}
               />
-              <hr />
-              <Question
-                heading="Will contract ownership be renounced?"
-                text="We will not be renoucing ownership.  This limits our ability 
-                to implement necessary changes and upgrades without a
-                cumbersome contract migration.  How many projects
-                to as the space continues to change."
-                no={3}
-                active={active}
-                setActive={setActive}
-              />
-              <hr />
-              <Question
-                heading="Will contract ownership be renounced?"
-                text="We will not be renoucing ownership.  This limits our ability 
-                to implement necessary changes and upgrades without a
-                cumbersome contract migration.  How many projects
-                to as the space continues to change."
-                no={4}
-                active={active}
-                setActive={setActive}
-              />
+
               <hr />
             </AnimateSharedLayout>
           </div>

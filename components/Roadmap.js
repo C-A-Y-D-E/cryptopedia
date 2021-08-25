@@ -32,13 +32,40 @@ const Roadmap = () => {
   const controls = useAnimation();
   const [ref, inView] = useInView();
 
+  const roadmap1 = [
+    { text: "Telegram Community", active: false, wrong: false },
+    { text: "Website design", active: false, wrong: false },
+    { text: "Crpytopedia Whitepaper Release", active: false, wrong: true },
+    { text: "GFX Prototype", active: false, wrong: true },
+    { text: "Marketing strategy implementation", active: false, wrong: true },
+  ];
+
+  const roadmap2 = [
+    { text: "Dox development team", active: true, wrong: true },
+    { text: "Fairlaunch Token", active: true, wrong: true },
+    { text: "Listing on CoinGecko", active: true, wrong: true },
+    { text: "Listing on CoinMarketCap", active: true, wrong: true },
+    { text: "Listing on Blockfolio", active: true, wrong: true },
+  ];
+
+  const roadmap3 = [
+    { text: "Audit - (Techrate)", active: false, wrong: true },
+    {
+      text: "Further Marketing Strategy implementation",
+      active: false,
+      wrong: true,
+    },
+    { text: "App/Web wallet development beta", active: false, wrong: true },
+    { text: "Live trading feature prototype", active: false, wrong: true },
+  ];
+
   useEffect(() => {
     if (inView) {
       controls.start("show");
     }
   }, [controls, inView]);
   return (
-    <div className="mt-20">
+    <div className="mt-20" id="roadmap">
       <h2 className="text-center text-accent">Roadmap</h2>
 
       <motion.div
@@ -48,9 +75,9 @@ const Roadmap = () => {
         animate={controls}
         className="mt-24 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-24"
       >
-        <RoadMap />
-        <RoadMap active={true} />
-        <RoadMap />
+        <RoadMap title="Ready" items={roadmap1} />
+        <RoadMap title="Set" items={roadmap2} active={true} />
+        <RoadMap title="Go" items={roadmap3} />
       </motion.div>
     </div>
   );
@@ -58,7 +85,7 @@ const Roadmap = () => {
 
 export default Roadmap;
 
-const RoadMap = ({ active }) => {
+const RoadMap = ({ active, items, title }) => {
   return (
     <motion.div
       variants={item}
@@ -66,14 +93,17 @@ const RoadMap = ({ active }) => {
         active ? "bg-accent" : ""
       }`}
     >
-      <span className="text-2xl text-gray-300">Ready</span>
+      <span className="text-2xl text-gray-300">{title}</span>
       <div className="text-3xl mt-4">Q3 2021</div>
       <ul className="mt-8 flex flex-col gap-5">
-        <ListItem text="Telegram Community" active={active} />
+        {/* <ListItem text="Telegram Community" active={active} />
         <ListItem text="Website design" active={active} />
         <ListItem text="Crpytopedia Whitepaper Release" active={active} />
-        <ListItem text="GFX Prototype" active={active} />
-        <ListItem text="Marketing strategy " active={active} />
+        <ListItem text="GFX Prototype" active={active} /> */}
+
+        {items.map((item) => (
+          <ListItem text={item.text} active={item.active} wrong={item.wrong} />
+        ))}
         {/* <ListItem text="" active={active} />
         <ListItem text="" active={active} />
         <ListItem text="" wrong={true} />
@@ -87,7 +117,7 @@ const ListItem = ({ wrong, active, text }) => {
   return (
     <li className="flex gap-6 items-center">
       <div
-        className={`h-[35px] w-[35px] rounded-full text-2xl ${
+        className={`h-[35px] w-[35px] rounded-full text-2xl flex-shrink-0 ${
           wrong ? "bg-gray-400" : "bg-accent"
         } ${
           active ? "bg-white text-accent" : "bg-accent"
@@ -95,7 +125,7 @@ const ListItem = ({ wrong, active, text }) => {
       >
         {wrong ? <FiX /> : <FiCheck />}
       </div>
-      <div className={`${wrong ? "text-gray-400" : ""} `}>{text}</div>
+      <div className={`${wrong ? "text-gray-300" : ""} `}>{text}</div>
     </li>
   );
 };

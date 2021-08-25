@@ -50,7 +50,7 @@ const Tokenomics = () => {
     }
   }, [controls, inView]);
   return (
-    <div className="mt-20 relative">
+    <div className="mt-20 relative" id="token">
       <div
         ref={ref}
         className="bg-dark p-8 lg:py-16 lg:px-24 flex gap-8 items-center flex-wrap relative z-20"
@@ -78,10 +78,10 @@ const Tokenomics = () => {
             animate={controls}
             className="grid grid-cols-1 lg:grid-cols-2  gap-x-16 gap-y-8"
           >
-            <Nomics />
-            <Nomics />
-            <Nomics />
-            <Nomics />
+            <Nomics number="2" text="back to holders" />
+            <Nomics number="4" text="back to liquidity pool" />
+            <Nomics number="2" text="funds development" />
+            <Nomics number="2" text="funds innovation" />
           </motion.div>
         </div>
       </div>
@@ -97,7 +97,7 @@ const Tokenomics = () => {
 };
 
 export default Tokenomics;
-const Nomics = () => {
+const Nomics = ({ number, text }) => {
   return (
     <motion.div
       variants={item}
@@ -109,8 +109,8 @@ const Nomics = () => {
         </div>
         <img src="/pattern2.svg" className="w-20 absolute -bottom-10 -left-4" />
       </div>
-      <div className="text-4xl mt-16">2%</div>
-      <div className="text-gray-300 mt-2">back to holders</div>
+      <div className="text-4xl mt-16">{number} %</div>
+      <div className="text-gray-300 mt-2">{text}</div>
     </motion.div>
   );
 };

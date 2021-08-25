@@ -25,10 +25,11 @@ const responsive = {
     items: 1,
   },
 };
+
 const Signal = ({ deviceType }) => {
   return (
-    <div className="mt-8">
-      <div className="flex items-center gap-6  flex-wrap">
+    <div className="mt-8 overflow-x-hidden">
+      <div className="flex items-center gap-6  flex-wrap px-8 lg:px-16 xl:px-20  ">
         <div className="lg:flex-1 relative">
           <FadeUp>
             <h2 className=" relative  inline-block leading-snug">
@@ -56,26 +57,64 @@ const Signal = ({ deviceType }) => {
         </div>
       </div>
 
-      <div className="mt-20 ">
-        <Carousel
-          ssr
-          deviceType={deviceType}
-          responsive={responsive}
-          showDots={false}
-          arrows={false}
-          itemClass="mx-4"
-        >
-          <CoinCard />
-          <CoinCard />
-          <CoinCard />
-          <CoinCard />
-          <CoinCard />
-          <CoinCard />
-          <CoinCard />
-        </Carousel>
+      <div className="whitespace-nowrap mt-24 flex scale-[5]  lg:scale-[2]">
+        <motion.img
+          animate={{
+            x: "0",
+          }}
+          initial={{ x: "-100%" }}
+          transition={{
+            repeat: Infinity,
+            repeatType: "loop",
+            duration: 24,
+            ease: "linear",
+          }}
+          src="/card2.svg"
+        />
+        <motion.img
+          animate={{
+            x: "0",
+          }}
+          initial={{ x: "-100%" }}
+          transition={{
+            repeat: Infinity,
+            repeatType: "loop",
+            duration: 24,
+            ease: "linear",
+          }}
+          src="/card2.svg"
+        />
+      </div>
+      <div className="whitespace-nowrap mt-32 flex scale-[5] lg:scale-[2]">
+        <motion.img
+          animate={{
+            x: "-100%",
+          }}
+          initial={{ x: "0" }}
+          transition={{
+            repeat: Infinity,
+            repeatType: "loop",
+            duration: 32,
+            ease: "linear",
+          }}
+          src="/card.svg"
+        />
+        <motion.img
+          animate={{
+            x: "-100%",
+          }}
+          initial={{ x: "0" }}
+          transition={{
+            repeat: Infinity,
+            repeatType: "loop",
+            duration: 32,
+            ease: "linear",
+          }}
+          src="/card.svg"
+        />
       </div>
 
-      <div className="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+      <div className="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 px-8 lg:px-16 xl:px-20  ">
         <SpecialityCard
           heading="Liquidity"
           text="Deep order book liquidity in all market condition"

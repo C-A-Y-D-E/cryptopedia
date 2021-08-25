@@ -10,37 +10,56 @@ import Video from "components/Video";
 import FAQ from "components/FAQ";
 import Footer from "components/Footer";
 import NavigateUp from "components/NavigateUp";
-import Menu from "components/Menu";
-import Header from "components/Header";
-import { motion, AnimatePresence, AnimateSharedLayout } from "framer-motion";
-import { useState } from "react";
-export default function App() {
-  const [header, setHeader] = useState(false);
-  return (
-    <AnimateSharedLayout>
-      <Header setHeader={setHeader} />
-      <AnimatePresence>
-        {header && <Menu setHeader={setHeader} />}
-      </AnimatePresence>
-      <div
-        id="home"
-        className={`container mx-auto px-8 lg:px-16 xl:px-20  flex flex-col ${
-          header ? "hidden" : "block"
-        }`}
-      >
-        <Home />
-        <Signal />
 
+export default function App() {
+  return (
+    <div id="home" className=" flex flex-col">
+      <div className="container mx-auto px-8 lg:px-16 xl:px-20  ">
+        {" "}
+        <Home />
+      </div>
+      <Signal />
+      <div className="container mx-auto px-8 lg:px-16 xl:px-20  ">
         <Tokenomics />
+      </div>
+
+      <div className="container mx-auto px-8 lg:px-16 xl:px-20  ">
+        {" "}
         <Infrastrusture />
+      </div>
+
+      <div className="container mx-auto px-8 lg:px-16 xl:px-20  ">
+        {" "}
         <Video />
+      </div>
+
+      <div className="container mx-auto px-8 lg:px-16 xl:px-20  ">
+        {" "}
         <Feature />
+      </div>
+
+      <div className="container mx-auto px-8 lg:px-16 xl:px-20  ">
+        {" "}
         <Roadmap />
+      </div>
+
+      <div className="container mx-auto px-8 lg:px-16 xl:px-20  ">
         <Mobile />
+      </div>
+
+      <div className="container mx-auto px-8 lg:px-16 xl:px-20  ">
+        {" "}
         <FAQ />
+      </div>
+
+      <div className="container mx-auto px-8 lg:px-16 xl:px-20  ">
+        {" "}
         <Footer />
+      </div>
+      <div className="container mx-auto px-8 lg:px-16 xl:px-20  ">
+        {" "}
         <NavigateUp />
       </div>
-    </AnimateSharedLayout>
+    </div>
   );
 }

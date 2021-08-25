@@ -3,7 +3,7 @@ import FadeUp from "components/FadeUp";
 import { FiSunrise } from "react-icons/fi";
 const Feature = () => {
   return (
-    <div className="mt-20 lg:mt-44">
+    <div className="mt-20 lg:mt-44" id="features">
       <div className="  relative">
         <FadeUp>
           <h2 className=" relative  inline-block">
@@ -40,7 +40,7 @@ const Feature = () => {
 export default Feature;
 const FeatureCard = ({ title, text }) => {
   return (
-    <div className="grid gap-12" style={{ gridTemplateColumns: "auto 1fr" }}>
+    <div className="grid gap-12 " style={{ gridTemplateColumns: "auto 1fr" }}>
       <div className="flex items-center justify-center">
         <div className="h-[60px] w-[60px] rounded-full bg-accent/20 flex items-center justify-center text-2xl">
           <FiSunrise />
