@@ -31,29 +31,29 @@ const Signal = ({ deviceType }) => {
     <div className="mt-8 overflow-x-hidden">
       <div className="flex items-center gap-6  flex-wrap px-8 lg:px-16 xl:px-20  ">
         <div className="lg:flex-1 relative">
-          <FadeUp>
-            <h2 className=" relative  inline-block leading-snug">
-              <span className="text-accent">Predict</span> changes and{" "}
-              <br className="lg:hidden 2xl:inline-block" /> signal to sell or{" "}
-              <span className="relative">
-                buy.{" "}
-                <img
-                  src="/blobs/headingblob.svg"
-                  className="absolute -right-10 -top-2 z-[-1]"
-                />
-              </span>
-            </h2>
-          </FadeUp>
+          {/* <FadeUp> */}
+          <h2 className=" relative  inline-block leading-snug">
+            <span className="text-accent">Predict</span> changes and{" "}
+            <br className="lg:hidden 2xl:inline-block" /> signal to sell or{" "}
+            <span className="relative">
+              buy.{" "}
+              <img
+                src="/blobs/headingblob.svg"
+                className="absolute -right-10 -top-2 z-[-1]"
+              />
+            </span>
+          </h2>
+          {/* </FadeUp> */}
         </div>
 
         <div className="lg:flex-1 ">
-          <FadeUp amount={0.2}>
-            <p className="max-w-[500px] ml-auto mt-0">
-              We believe that your ability to take good investment decisions
-              shouldn’t require you to waste precious time on digging into
-              contracts or reddit and countless social channels.
-            </p>
-          </FadeUp>
+          {/* <FadeUp amount={0.2}> */}
+          <p className="max-w-[500px] ml-auto mt-0">
+            We believe that your ability to take good investment decisions
+            shouldn’t require you to waste precious time on digging into
+            contracts or reddit and countless social channels.
+          </p>
+          {/* </FadeUp> */}
         </div>
       </div>
 
