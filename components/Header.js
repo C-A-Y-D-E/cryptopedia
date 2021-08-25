@@ -22,12 +22,18 @@ const Header = ({ setHeader }) => {
       layoutId="h"
       className={`${
         header ? " shadow bg-dark" : "sm:bg-transparent "
-      } fixed left-0 right-0 container mx-auto px-8 lg:px-16 transition-all duration-1000`}
+      } fixed left-0 right-0 top-0 container mx-auto px-8 lg:px-16 transition-all duration-1000`}
       style={{ zIndex: 99 }}
     >
       <div className="flex items-center justify-between text-2xl lg:text-4xl my-6">
         <Link href="/">
-          <a>Cryptopedia</a>
+          <a>
+            {!header ? (
+              <img src="/logo.svg" className="w-[120px]" />
+            ) : (
+              <img src="/logo.svg" className="w-[60px]" />
+            )}
+          </a>
         </Link>
         <div className="cursor-pointer" onClick={() => setHeader(true)}>
           <VscListSelection />

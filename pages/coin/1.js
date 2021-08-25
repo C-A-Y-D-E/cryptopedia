@@ -7,7 +7,7 @@ import Tab from "components/Tab";
 const Detail = () => {
   return (
     <div className=" w-full  px-4 xl:p-16">
-      <div className=" bg-dark mt-24 rounded-lg">
+      <div className=" bg-dark mt-44 lg:mt-32 rounded-lg">
         <div className="p-8 lg:p-16 border-b-[.1px] border-accent/30">
           <Head />
         </div>
