@@ -2,106 +2,91 @@ import React from "react";
 import { Table, Thead, Tbody, Tr, Th, Td } from "react-super-responsive-table";
 import "react-super-responsive-table/dist/SuperResponsiveTableStyle.css";
 import { MdUnfoldMore } from "react-icons/md";
-const CoinTable = () => {
+import Link from "next/link";
+const CoinTable = ({ currency }) => {
+  let dollarUSLocale = Intl.NumberFormat("en-US");
   return (
     <Table>
       <Thead>
         <Tr>
           <Th>
-            <div className="flex items-center gap-2 justify-start lg:justify-center lg:h-[50px]">
+            <div className="flex items-center gap-2 justify-start  lg:h-[50px]">
               <MdUnfoldMore /> #
             </div>
           </Th>
           <Th>
-            <div className="flex items-center gap-2 justify-start lg:justify-center lg:h-[50px]">
+            <div className="flex items-center gap-2 justify-start  lg:h-[50px]">
               <MdUnfoldMore /> Coin
             </div>
           </Th>
           <Th>
-            <div className="flex items-center gap-2 justify-start lg:justify-center lg:h-[50px]">
-              <MdUnfoldMore /> Marker Cap
-            </div>
-          </Th>
-          <Th>
-            <div className="flex items-center gap-2 justify-start lg:justify-center lg:h-[50px]">
-              <MdUnfoldMore /> Volume 24h
-            </div>
-          </Th>
-          <Th>
-            <div className="flex items-center gap-2 justify-start lg:justify-center lg:h-[50px]">
+            <div className="flex items-center gap-2 justify-start  lg:h-[50px]">
               <MdUnfoldMore /> Price
             </div>
           </Th>
           <Th>
-            <div className="flex items-center gap-2 justify-start lg:justify-center lg:h-[50px]">
+            <div className="flex items-center gap-2 justify-start  lg:h-[50px]">
+              <MdUnfoldMore /> Marker Cap
+            </div>
+          </Th>
+          <Th>
+            <div className="flex items-center gap-2 justify-start  lg:h-[50px]">
+              <MdUnfoldMore /> Volume 24h
+            </div>
+          </Th>
+
+          <Th>
+            <div className="flex items-center gap-2 justify-start  lg:h-[50px]">
               <MdUnfoldMore /> Circulating Supply
             </div>
           </Th>
           <Th>
-            <div className="flex items-center gap-2 justify-start lg:justify-center lg:h-[50px]">
+            <div className="flex items-center gap-2 justify-start  lg:h-[50px]">
               <MdUnfoldMore /> Last 7 Days
             </div>
           </Th>
         </Tr>
       </Thead>
       <Tbody>
-        <Tr>
-          <Td>1</Td>
-          <Td>
-            <Currency />
-          </Td>
-          <Td>
-            <span className="text-gray-300">$911,405,112,636</span>
-          </Td>
-          <Td>$25,029,085,894</Td>
-          <Td>$48,384.57</Td>
-          <Td>
-            <span className="text-gray-300">18,794,087 BTC</span>
-          </Td>
-          <Td>
-            <div>
-              <img class="mx-auto" src="/1.png" />
-            </div>
-          </Td>
-        </Tr>
-        <Tr>
-          <Td>2</Td>
-          <Td>
-            <Currency />
-          </Td>
-          <Td>
-            <span className="text-gray-300">$911,405,112,636</span>
-          </Td>
-          <Td>$25,029,085,894</Td>
-          <Td>$48,384.57</Td>
-          <Td>
-            <span className="text-gray-300">18,794,087 BTC</span>
-          </Td>
-          <Td>
-            <div>
-              <img class="mx-auto" src="/1.png" />
-            </div>
-          </Td>
-        </Tr>
-        <Tr>
-          <Td>3</Td>
-          <Td>
-            <Currency />
-          </Td>
-          <Td>
-            <span className="text-gray-300">$911,405,112,636</span>
-          </Td>
-          <Td>$25,029,085,894</Td>
-          <Td>$48,384.57</Td>
-          <Td>
-            <span className="text-gray-300">18,794,087 BTC</span>
-          </Td>
-          <Td>
-            <div>
-              <img class="mx-auto" src="/1.png" />
-            </div>
-          </Td>
-        </Tr>
+        {currency.map((curr) => {
+          return (
+            <Link href={`/coin/${encodeURIComponent(curr.id)}`}>
+              <Tr key={curr.id}>
+                <Td>{curr.cmc_rank}</Td>
+                <Td>
+                  <Currency id={curr.id} text={curr.name} />
+                </Td>
+                <Td>${dollarUSLocale.format(curr.quote["USD"].price)}</Td>
+                <Td>
+                  <span>
+                    ${dollarUSLocale.format(curr.quote["USD"].market_cap)}
+                  </span>
+                </Td>
+                <Td>${dollarUSLocale.format(curr.quote["USD"].volume_24h)}</Td>
+
+                <Td>
+                  <span>{dollarUSLocale.format(curr.circulating_supply)}</span>
+                </Td>
+                <Td>
+                  {/* <span>
+                    $
+                    {dollarUSLocale.format(curr.quote["USD"].percent_change_7d)}
+                  </span> */}
+                  <div>
+                    <img
+                      class={`${
+                        `${curr.quote["USD"].percent_change_7d}`.includes("-")
+                          ? "red"
+                          : "green"
+                      }    mx-auto w-[120px]`}
+                      src={`https://s3.coinmarketcap.com/generated/sparklines/web/7d/usd/${curr.id}.png`}
+                    />
+                  </div>
+                </Td>
+              </Tr>
+            </Link>
+          );
+        })}
       </Tbody>
     </Table>
   );
@@ -109,16 +94,16 @@ const CoinTable = () => {
 
 export default CoinTable;
 
-const Currency = () => {
+const Currency = ({ text, id }) => {
   return (
-    <div class="flex gap-4 justify-center">
+    <div class="flex gap-4 ">
       <img
         class="w-[30px]"
-        src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png"
+        src={`https://s2.coinmarketcap.com/static/img/coins/64x64/${id}.png`}
       />
       <div class="flex items-center gap-3">
         <p font-weight="semibold" color="text" font-size="1" class="font-bold">
-          Bitcoin
+          {text}
         </p>
       </div>
     </div>

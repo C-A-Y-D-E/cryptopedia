@@ -62,6 +62,13 @@ const Menu = ({ setHeader }) => {
               </a>
             </Link>
           </div>
+          <div class="py-3 md:py-5" onClick={() => setHeader(false)}>
+            <Link href="/coin">
+              <a class="no-underline hover:text-accent">
+                <span class="text-3xl md:text-6xl font-semibold">Currency</span>
+              </a>
+            </Link>
+          </div>
         </motion.div>
         <div class="w-full md:w-1/2 lg:w-1/12 mt-10 md:mt-0">
           <h6 class="text-gray-400 font-bold mb-6">Socials</h6>

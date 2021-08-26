@@ -31,6 +31,10 @@ body {
     @apply h-12 border-b border-accent/20;
   }
 
+  td {
+    @apply cursor-pointer;
+  }
+
   th {
     @apply h-[50px] pb-8 text-gray-400;
   }
@@ -42,9 +46,9 @@ body {
     @apply py-4;
   }
 
-  td {
+  /* td {
     @apply text-center;
-  }
+  } */
 }
 
 .row-letter {
@@ -64,6 +68,14 @@ body {
 
 .card-shadow {
   box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.3);
+}
+
+.red {
+  filter: hue-rotate(300deg) saturate(210%) brightness(0.7) contrast(170%);
+}
+
+.green {
+  filter: hue-rotate(85deg) saturate(80%) brightness(0.85);
 }
 
 /* Card animatio */
