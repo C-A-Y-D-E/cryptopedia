@@ -10,7 +10,7 @@ const CMC = ({ data }) => {
   return (
     <div>
       <div className="bg-dark h-[700px]">
-        <div className="flex flex-wrap lg:flex-nowrap pb-24  pt-40 relative w-full px-8 lg:px-16 xl:px-20 ">
+        <div className="flex flex-wrap lg:flex-nowrap pb-2 gap-12  pt-40 relative w-full px-8 lg:px-16 xl:px-20 ">
           <div className="">
             <motion.h1
               initial={{ opacity: 0, y: 20 }}

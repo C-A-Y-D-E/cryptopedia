@@ -10,7 +10,7 @@ const Head = ({ coinData, info }) => {
         </div>
         <div className="flex flex-col gap-4">
           <span className="font-bold flex gap-4">
-            <span>{coinData.name}</span>
+            <span className="text-2xl">{coinData.name}</span>
             <span
               className={`${
                 `${coinData.quote["USD"].percent_change_7d}`.includes("-")

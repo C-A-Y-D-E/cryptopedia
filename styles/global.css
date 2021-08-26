@@ -67,6 +67,7 @@ body {
 @media (max-width: 768px) {
   .responsiveTable tbody tr {
     border: 1px solid rgba(38, 174, 96, 0.2) !important;
+    padding: 1rem !important;
   }
 }
 

@@ -37,7 +37,8 @@ const CoinTable = ({ currency }) => {
 
           <Th>
             <div className="flex items-center gap-2 justify-start  lg:h-[50px]">
-              <MdUnfoldMore /> Circulating Supply
+              <MdUnfoldMore />
+              Circulating Supply
             </div>
           </Th>
           <Th>
