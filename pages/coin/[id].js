@@ -6,7 +6,7 @@ import Tab from "components/Tab";
 
 const Detail = ({ info, id, data }) => {
   const coinData = data.find((data) => data.id === parseInt(id));
-  console.log(coinData, "yo");
+
   return (
     <div className=" w-full  px-4 xl:p-16">
       <div className=" bg-dark mt-44 lg:mt-32 rounded-lg">

@@ -51,7 +51,7 @@ const CoinTable = ({ currency }) => {
         {currency.map((curr) => {
           return (
             <Link href={`/coin/${encodeURIComponent(curr.id)}`}>
-              <Tr key={curr.id}>
+              <Tr className="text-center" key={curr.id}>
                 <Td>{curr.cmc_rank}</Td>
                 <Td>
                   <Currency id={curr.id} text={curr.name} />

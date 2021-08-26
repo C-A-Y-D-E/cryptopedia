@@ -5,7 +5,7 @@ import axios from "axios";
 import { fetcher } from "utils/fetcher";
 const CMC = ({ data }) => {
   let dollarUSLocale = Intl.NumberFormat("en-US");
-  console.log(data);
+
   const topCoin = [...data].splice(0, 3);
   return (
     <div>
@@ -110,6 +110,7 @@ const CMC = ({ data }) => {
             <span className="text-accent">Top 10 </span>
             <br /> Cryptocurrency
           </h2>
+
           <CoinTable currency={data} />
         </div>
       </div>

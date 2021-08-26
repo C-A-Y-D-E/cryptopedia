@@ -31,9 +31,13 @@ body {
     @apply h-12 border-b border-accent/20;
   }
 
-  td {
-    @apply cursor-pointer;
+  tr {
+    @apply hover:bg-dark cursor-pointer;
   }
+
+  /* td {
+    @apply cursor-pointer;
+  } */
 
   th {
     @apply h-[50px] pb-8 text-gray-400;

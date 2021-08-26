@@ -1,18 +1,59 @@
+import ETH from "content/eth.mdx";
 import BTC from "content/btc.mdx";
+import DOT from "content/dot.mdx";
+import BNB from "content/bnb.mdx";
+import USDT from "content/usdt.mdx";
+import USDC from "content/usdc.mdx";
+import XRP from "content/xrp.mdx";
+import ADA from "content/ada.mdx";
+import DOGE from "content/doge.mdx";
+import SOL from "content/sol.mdx";
 import { MDXProvider } from "@mdx-js/react";
-
+import { useRouter } from "next/router";
 const components = {
   pre: (props) => <div {...props} />,
   code: (props) => <pre style={{ color: "tomato" }} {...props} />,
   h4: (props) => <h4 style={{ marginTop: "2.5rem" }} {...props} />,
+  h5: (props) => (
+    <h4 style={{ marginTop: "2.5rem", fontSize: "1.2rem" }} {...props} />
+  ),
   p: (props) => <p style={{ marginTop: "1.25rem" }} {...props} />,
 };
+
+const info = (id) => {
+  switch (id) {
+    case "1":
+      return <BTC />;
+    case "1027":
+      return <ETH />;
+    case "2010":
+      return <ADA />;
+    case "1839":
+      return <BNB />;
+    case "825":
+      return <USDT />;
+    case "52":
+      return <XRP />;
+    case "74":
+      return <DOGE />;
+    case "3408":
+      return <USDC />;
+    case "6636":
+      return <DOT />;
+    case "5426":
+      return <SOL />;
+
+    default:
+      return <BTC />;
+  }
+};
+
 const Information = () => {
+  const router = useRouter();
+  const { id } = router.query;
   return (
     <MDXProvider components={components}>
-      <main>
-        <BTC />
-      </main>
+      <main>{info(id)}</main>
 
       {/* <h4 className="mt-10">What Is Bitcoin (BTC)?</h4>
         <p className="mt-5 text-base">
