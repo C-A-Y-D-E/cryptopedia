@@ -97,7 +97,7 @@ export default CoinTable;
 
 const Currency = ({ text, id }) => {
   return (
-    <div class="flex gap-4 ">
+    <div class="flex gap-4 items-center">
       <img
         class="w-[30px]"
         src={`https://s2.coinmarketcap.com/static/img/coins/64x64/${id}.png`}
