@@ -29,7 +29,7 @@ const Head = ({ coinData, info }) => {
             )}{" "}
             .
             <sup>
-              {`${coinData.quote["USD"].price}`.split(".")[1].substring(0, 2)}
+              {`${coinData.quote["USD"].price}`.split(".")[1].substring(0, 4)}
             </sup>
           </div>
         </div>

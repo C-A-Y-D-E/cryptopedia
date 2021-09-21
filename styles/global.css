@@ -83,4 +83,13 @@ body {
   filter: hue-rotate(85deg) saturate(80%) brightness(0.85);
 }
 
+article div {
+  /* height: auto !important; */
+  width: auto !important;
+}
+article div div {
+  /* height: auto !important; */
+  width: auto !important;
+}
+
 /* Card animatio */
