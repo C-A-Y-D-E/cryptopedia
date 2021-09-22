@@ -7,14 +7,18 @@ const Menu = ({ setHeader }) => {
     <motion.div
       exit={{ opacity: 0 }}
       layoutId="h"
-      className="fixed h-full bg-dark w-full inset-0  overflow-y-auto overflow-x-hidden"
+      className="fixed h-full element  bg-dark w-full inset-0  overflow-y-auto overflow-x-hidden"
       style={{ zIndex: 999 }}
     >
       <motion.div
         layoutId="header"
         className="flex justify-between text-2xl lg:text-4xl my-6 container mx-auto px-8 items-center lg:px-16"
       >
-        <div>Cryptopedia</div>
+        <Link href="/">
+          <a>
+            <img src="/logo.svg" className="w-[120px]" />
+          </a>
+        </Link>
         <div className="cursor-pointer" onClick={() => setHeader(false)}>
           <FiX />
         </div>
@@ -46,7 +50,7 @@ const Menu = ({ setHeader }) => {
             <Link href="/dex/7186">
               <a class="no-underline hover:text-accent">
                 <span class="text-3xl md:text-6xl font-semibold">
-                  Shit Coin Rankings
+                  Shitcoin Rankings
                 </span>
               </a>
             </Link>
@@ -69,18 +73,16 @@ const Menu = ({ setHeader }) => {
           </div>
           <div class="py-3 md:py-5" onClick={() => setHeader(false)}>
             <Link href="#">
-              <a class="no-underline hover:text-accent">
-                <span class="text-3xl md:text-6xl font-semibold">
-                  Exchange (coming soon)
-                </span>
+              <a class="no-underline text-gray-400 cursor-not-allowed">
+                <span class="text-3xl md:text-6xl font-semibold">Exchange</span>
               </a>
             </Link>
           </div>
           <div class="py-3 md:py-5" onClick={() => setHeader(false)}>
             <Link href="#">
-              <a class="no-underline hover:text-accent">
+              <a class="no-underline text-gray-400 cursor-not-allowed">
                 <span class="text-3xl md:text-6xl font-semibold">
-                  NFT Marketplace (coming soon)
+                  NFT Marketplace
                 </span>
               </a>
             </Link>

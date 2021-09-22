@@ -93,3 +93,7 @@ article div div {
 }
 
 /* Card animatio */
+
+.element::-webkit-scrollbar {
+  width: 0 !important;
+}
