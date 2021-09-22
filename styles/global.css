@@ -50,9 +50,9 @@ body {
     @apply py-4;
   }
 
-  /* td {
-    @apply text-center;
-  } */
+  td {
+    @apply text-left;
+  }
 }
 
 .row-letter {

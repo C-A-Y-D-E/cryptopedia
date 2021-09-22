@@ -59,7 +59,7 @@ const Menu = ({ setHeader }) => {
             <Link href="/dexopedia">
               <a class="no-underline hover:text-accent">
                 <span class="text-3xl md:text-6xl font-semibold">
-                  DexoPedia{" "}
+                  Dexopedia{" "}
                 </span>
               </a>
             </Link>

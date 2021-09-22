@@ -60,13 +60,31 @@ const CoinTable = ({ currency }) => {
                 <Td>${dollarUSLocale.format(curr.quote["USD"].price)}</Td>
                 <Td>
                   <span>
-                    ${dollarUSLocale.format(curr.quote["USD"].market_cap)}
+                    $
+                    {
+                      dollarUSLocale
+                        .format(curr.quote["USD"].market_cap)
+                        .split(".")[0]
+                    }
                   </span>
                 </Td>
-                <Td>${dollarUSLocale.format(curr.quote["USD"].volume_24h)}</Td>
+                <Td>
+                  $
+                  {
+                    dollarUSLocale
+                      .format(curr.quote["USD"].volume_24h)
+                      .split(".")[0]
+                  }
+                </Td>
 
                 <Td>
-                  <span>{dollarUSLocale.format(curr.circulating_supply)}</span>
+                  <span>
+                    {
+                      dollarUSLocale
+                        .format(curr.circulating_supply)
+                        .split(".")[0]
+                    }
+                  </span>
                 </Td>
                 <Td>
                   {/* <span>
@@ -79,7 +97,7 @@ const CoinTable = ({ currency }) => {
                         `${curr.quote["USD"].percent_change_7d}`.includes("-")
                           ? "red"
                           : "green"
-                      }    mx-auto w-[120px]`}
+                      }    mx-auto `}
                       src={`https://s3.coinmarketcap.com/generated/sparklines/web/7d/usd/${curr.id}.png`}
                     />
                   </div>
