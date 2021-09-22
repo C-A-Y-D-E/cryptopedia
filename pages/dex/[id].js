@@ -15,19 +15,27 @@ import {
 } from "react-icons/fa";
 const DEX = ({ info, id, data }) => {
   const coinData = data.find((data) => data.id === parseInt(id));
-
+  console.log(coinData);
   return (
     <div className=" w-full  px-4 xl:p-16">
       <div className=" bg-dark mt-44 lg:mt-32 rounded-lg">
         <div className="p-8 lg:p-16 border-b-[.1px] border-accent/30">
-          <Head coinData={coinData} data={data} info={info[id]} />
+          <Head
+            coinData={coinData}
+            data={data.filter(
+              (d) => d?.platform?.name === "Binance Smart Chain"
+            )}
+            info={info[id]}
+          />
         </div>
         <div className="flex flex-wrap md:flex-nowrap">
           <div className="   h-full p-8">
             <LeftBar info={info[id]} coinData={coinData} />
           </div>
           <div className=" border-t md:border-l border-accent/30  h-full w-full p-6">
-            <DEXTAB symbol={coinData.symbol} />
+            <DEXTAB
+              symbol={`${coinData.symbol}${Object.keys(coinData.quote)[0]}`}
+            />
             {/* <div className="">
               <MenuCard symbol={coinData.symbol} />
             </div> */}
@@ -45,72 +53,129 @@ export default DEX;
 const Head = ({ coinData, info, data }) => {
   let dollarUSLocale = Intl.NumberFormat("en-US");
 
-  const [search, setSearch] = useState("");
-  const [list, setList] = useState([]);
-  const [show, setShow] = useState(false);
+  // const [search, setSearch] = useState("");
+  // const [list, setList] = useState([]);
 
-  useEffect(() => {
-    if (search.length >= 1) {
-      setShow(true);
-    } else {
-      setShow(false);
-    }
-  }, [search.length]);
+  // useEffect(() => {
+  //   if (search.length >= 1) {
+  //     setShow(true);
+  //   } else {
+  //     setShow(false);
+  //   }
+  // }, [search.length]);
 
-  const handleInput = (e) => {
-    setSearch(e.target.value);
-    setList(
-      data.filter(
-        (d) =>
-          d.name.toLowerCase().startsWith(search) ||
-          d.symbol.toLowerCase().startsWith(search)
-      )
-    );
-  };
+  // const handleInput = (e) => {
+  //   setSearch(e.target.value);
+  //   setList(
+  //     data.filter(
+  //       (d) =>
+  //         d.name.toLowerCase().startsWith(search) ||
+  //         d.symbol.toLowerCase().startsWith(search)
+  //     )
+  //   );
+  // };
 
   return (
-    <div className="flex items-center flex-wrap gap-8 h-full justify-between">
-      <div className="flex flex-col gap-12 items-center">
-        <div className="flex gap-5 items-center">
-          <div>
-            <img src={info.logo} className="w-[40px]" />
-          </div>
-          <div className="flex flex-col gap-4">
-            <span className="font-bold flex gap-4">
-              <span className="text-2xl">{coinData?.name}</span>
-              <span
-                className={`${
-                  `${coinData.quote["USD"].percent_change_7d}`.includes("-")
-                    ? "text-red-600"
-                    : "text-accent"
-                } flex gap-4 items-center`}
-              >
-                <FiTrendingUp />{" "}
-                {parseFloat(coinData.quote["USD"].percent_change_7d).toFixed(2)}
-              </span>
+    <div className="flex items-center flex-wrap gap-12 h-full justify-between">
+      <div className="flex flex-wrap-reverse gap-5 items-center w-full">
+        <div>
+          <img src={info.logo} className="w-[40px]" />
+        </div>
+        <div className="flex flex-col gap-4 ">
+          <span className="font-bold flex gap-4">
+            <span className="text-2xl">{coinData.name}</span>
+            <span
+              className={`${
+                `${coinData.quote["USD"].percent_change_7d}`.includes("-")
+                  ? "text-red-600"
+                  : "text-accent"
+              } flex gap-4 items-center`}
+            >
+              <FiTrendingUp />{" "}
+              {parseFloat(coinData.quote["USD"].percent_change_7d).toFixed(2)}
             </span>
-
-            <div className="text-4xl font-bold">
-              <sup>$ </sup>
-              {dollarUSLocale.format(
-                `${coinData.quote["USD"].price}`.split(".")[0]
-              )}{" "}
-              .
-              <sup>
-                {`${coinData.quote["USD"].price}`.split(".")[1].substring(0, 5)}
-              </sup>
-            </div>
+          </span>
+          <div className="text-4xl font-bold">
+            <sup>$ </sup>
+            {dollarUSLocale.format(
+              `${coinData.quote["USD"].price}`.split(".")[0]
+            )}{" "}
+            .
+            <sup>
+              {`${coinData.quote["USD"].price}`.split(".")[1].substring(0, 2)}
+            </sup>
           </div>
         </div>
+        <div className="flex gap-6 items-center  relative ml-auto">
+          {/* <button className="border rounded-l-full items-center flex gap-2 py-2 px-4 border-white/30 ">
+            <FiShare />
+            Share
+          </button> */}
+
+          {/* <button className="bg-accent  py-2 px-4  items-center flex gap-2 border-white/30">
+            {" "}
+            <MdPayment />
+            Buy Bitcoin
+          </button> */}
+          <SearchList data={data} url={"dex"} />
+        </div>
       </div>
-      <div className="flex gap-12 flex-wrap relative">
-        <SearchList
-          list={list}
-          setShow={setShow}
-          handleInput={handleInput}
-          show={show}
-          search={search}
-        />
+      <div className="flex gap-12 flex-wrap w-full">
+        <ul className="flex flex-wrap gap-8 lg:gap-16 ">
+          <li>
+            <div className="flex flex-col gap-1  ">
+              <span className="text-sm text-gray-300 font-semibold">
+                Market Cap
+              </span>
+              <span className="font-medium text-base">
+                $
+                {
+                  dollarUSLocale
+                    .format(coinData.quote["USD"].market_cap)
+                    .split(".")[0]
+                }
+              </span>
+            </div>
+          </li>
+          <li>
+            <div className="flex flex-col gap-1 ">
+              <span className="text-sm text-gray-300 font-semibold">
+                Vol.24H
+              </span>
+              <span className="font-medium text-base">
+                $
+                {
+                  dollarUSLocale
+                    .format(coinData.quote["USD"].volume_24h)
+                    .split(".")[0]
+                }
+              </span>
+            </div>
+          </li>
+          <li>
+            <div className="flex flex-col gap-1 ">
+              <span className="text-sm text-gray-300 font-semibold">
+                Circulating Supply
+              </span>
+              <span className="font-medium text-base">
+                {dollarUSLocale.format(coinData.circulating_supply)}{" "}
+                {coinData.symbol}
+              </span>
+            </div>
+          </li>
+          <li>
+            <div className="flex flex-col gap-1 ">
+              <span className="text-sm text-gray-300 font-semibold">
+                Max Supply
+              </span>
+              <span className="font-medium text-base">
+                {coinData.max_supply
+                  ? dollarUSLocale.format(coinData.max_supply)
+                  : "Not available"}
+              </span>
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
   );

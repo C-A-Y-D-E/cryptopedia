@@ -1,14 +1,15 @@
 import { FiShare, FiTrendingUp } from "react-icons/fi";
 import { MdPayment } from "react-icons/md";
-const Head = ({ coinData, info }) => {
+import SearchList from "components/cmc/SearchList";
+const Head = ({ coinData, info, data }) => {
   let dollarUSLocale = Intl.NumberFormat("en-US");
   return (
-    <div className="flex items-center flex-wrap gap-8 h-full justify-between">
-      <div className="flex gap-5 items-center">
+    <div className="flex items-center flex-wrap gap-12 h-full justify-between">
+      <div className="flex flex-wrap-reverse gap-5 items-center w-full">
         <div>
           <img src={info.logo} className="w-[40px]" />
         </div>
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4 ">
           <span className="font-bold flex gap-4">
             <span className="text-2xl">{coinData.name}</span>
             <span
@@ -29,20 +30,38 @@ const Head = ({ coinData, info }) => {
             )}{" "}
             .
             <sup>
-              {`${coinData.quote["USD"].price}`.split(".")[1].substring(0, 4)}
+              {`${coinData.quote["USD"].price}`.split(".")[1].substring(0, 2)}
             </sup>
           </div>
         </div>
+        <div className="flex gap-6 items-center  relative ml-auto">
+          {/* <button className="border rounded-l-full items-center flex gap-2 py-2 px-4 border-white/30 ">
+            <FiShare />
+            Share
+          </button> */}
+
+          {/* <button className="bg-accent  py-2 px-4  items-center flex gap-2 border-white/30">
+            {" "}
+            <MdPayment />
+            Buy Bitcoin
+          </button> */}
+          <SearchList data={data} url={"coin"} />
+        </div>
       </div>
-      <div className="flex gap-12 flex-wrap">
-        <ul className="flex flex-wrap gap-8">
+      <div className="flex gap-12 flex-wrap w-full">
+        <ul className="flex flex-wrap gap-8 lg:gap-16 ">
           <li>
             <div className="flex flex-col gap-1  ">
               <span className="text-sm text-gray-300 font-semibold">
                 Market Cap
               </span>
               <span className="font-medium text-base">
-                ${dollarUSLocale.format(coinData.quote["USD"].market_cap)}
+                $
+                {
+                  dollarUSLocale
+                    .format(coinData.quote["USD"].market_cap)
+                    .split(".")[0]
+                }
               </span>
             </div>
           </li>
@@ -52,7 +71,12 @@ const Head = ({ coinData, info }) => {
                 Vol.24H
               </span>
               <span className="font-medium text-base">
-                ${dollarUSLocale.format(coinData.quote["USD"].volume_24h)}
+                $
+                {
+                  dollarUSLocale
+                    .format(coinData.quote["USD"].volume_24h)
+                    .split(".")[0]
+                }
               </span>
             </div>
           </li>
@@ -80,17 +104,6 @@ const Head = ({ coinData, info }) => {
             </div>
           </li>
         </ul>
-        <div className="flex gap-1 mx-auto">
-          <button className="border rounded-l-full items-center flex gap-2 py-2 px-4 border-white/30 ">
-            <FiShare />
-            Share
-          </button>
-          <button className="bg-accent rounded-r-full py-2 px-4  items-center flex gap-2 border-white/30">
-            {" "}
-            <MdPayment />
-            Buy Bitcoin
-          </button>
-        </div>
       </div>
     </div>
   );

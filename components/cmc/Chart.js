@@ -10,11 +10,11 @@ const TradingViewWidget = dynamic(() => import("react-tradingview-widget"), {
 
 const App = ({ symbol }) => (
   <TradingViewWidget
-    symbol={symbol + "USDT"}
+    symbol={symbol}
     theme="DARK"
     locale="en"
     // width={800}
-    height={800}
+    height={600}
     // autosize
   />
 );

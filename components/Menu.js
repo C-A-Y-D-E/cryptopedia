@@ -32,40 +32,56 @@ const Menu = ({ setHeader }) => {
               </a>
             </Link>
           </div>
+
           <div class="py-3 md:py-5" onClick={() => setHeader(false)}>
-            <Link href="/#token">
+            <Link href="/coin">
               <a class="no-underline hover:text-accent">
                 <span class="text-3xl md:text-6xl font-semibold">
-                  Tokenomics
+                  Coin Rankings
                 </span>
               </a>
             </Link>
           </div>
           <div class="py-3 md:py-5" onClick={() => setHeader(false)}>
-            <Link href="/#about">
+            <Link href="/dex/7186">
               <a class="no-underline hover:text-accent">
-                <span class="text-3xl md:text-6xl font-semibold">About</span>
+                <span class="text-3xl md:text-6xl font-semibold">
+                  Shit Coin Rankings
+                </span>
               </a>
             </Link>
           </div>
           <div class="py-3 md:py-5" onClick={() => setHeader(false)}>
-            <Link href="/#features">
+            <Link href="/dexopedia">
               <a class="no-underline hover:text-accent">
-                <span class="text-3xl md:text-6xl font-semibold">Features</span>
+                <span class="text-3xl md:text-6xl font-semibold">
+                  DexoPedia{" "}
+                </span>
               </a>
             </Link>
           </div>
           <div class="py-3 md:py-5" onClick={() => setHeader(false)}>
-            <Link href="/#roadmap">
-              <a class="no-underline hover:text-accent">
-                <span class="text-3xl md:text-6xl font-semibold">Roadmap</span>
+            <Link href="https://cryptopedia.boards.net/">
+              <a class="no-underline hover:text-accent" target="_blank">
+                <span class="text-3xl md:text-6xl font-semibold">Forums </span>
               </a>
             </Link>
           </div>
           <div class="py-3 md:py-5" onClick={() => setHeader(false)}>
-            <Link href="/coin">
+            <Link href="#">
               <a class="no-underline hover:text-accent">
-                <span class="text-3xl md:text-6xl font-semibold">Currency</span>
+                <span class="text-3xl md:text-6xl font-semibold">
+                  Exchange (coming soon)
+                </span>
+              </a>
+            </Link>
+          </div>
+          <div class="py-3 md:py-5" onClick={() => setHeader(false)}>
+            <Link href="#">
+              <a class="no-underline hover:text-accent">
+                <span class="text-3xl md:text-6xl font-semibold">
+                  NFT Marketplace (coming soon)
+                </span>
               </a>
             </Link>
           </div>

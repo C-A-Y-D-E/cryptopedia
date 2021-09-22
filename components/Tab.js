@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { Tab } from "@headlessui/react";
-
+import Chart from "components/cmc/Chart";
 import Information from "components/cmc/Information";
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function Example() {
+export default function Example({ symbol }) {
   return (
     <div className="w-full  sm:px-0">
       <Tab.Group>
@@ -37,14 +37,16 @@ export default function Example() {
               )
             }
           >
-            Holders
+            Chart
           </Tab>
         </Tab.List>
-        <Tab.Panels className="mt-2 w-full ">
+        <Tab.Panels className="mt-6 w-full ">
           <Tab.Panel key={2}>
             <Information />
           </Tab.Panel>
-          <Tab.Panel key={3}>Coming soon</Tab.Panel>
+          <Tab.Panel key={3}>
+            <Chart symbol={symbol} />
+          </Tab.Panel>
         </Tab.Panels>
       </Tab.Group>
     </div>

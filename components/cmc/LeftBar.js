@@ -1,9 +1,32 @@
 import { FiExternalLink } from "react-icons/fi";
-const LeftBar = ({ info, coinData }) => {
+import {
+  FaTelegramPlane,
+  FaTwitter,
+  FaRedditAlien,
+  FaDiscord,
+} from "react-icons/fa";
+const LeftBar = ({ info, coinData, data }) => {
   console.log(info);
   return (
     <div className="max-w-[280px]">
-      <div className="font-bold text-lg text-accent">Basic Info</div>
+      <div className="">
+        <div className="font-bold text-lg text-accent">Socials</div>
+        <div className="flex gap-6 items-center lg:ml-auto mx-auto mt-6 lg:mx-0">
+          <div className="h-[40px] w-[40px] rounded-full bg-accent/20 flex items-center justify-center text-base text-accent">
+            <FaTelegramPlane />
+          </div>
+          <div className="h-[40px] w-[40px] rounded-full bg-accent/20 flex items-center justify-center text-base text-accent">
+            <FaTwitter />
+          </div>
+          <div className="h-[40px] w-[40px] rounded-full bg-accent/20 flex items-center justify-center text-base text-accent">
+            <FaRedditAlien />
+          </div>
+          <div className="h-[40px] w-[40px] rounded-full bg-accent/20 flex items-center justify-center text-base text-accent">
+            <FaDiscord />
+          </div>
+        </div>
+      </div>
+      <div className="font-bold text-lg mt-8 text-accent">Basic Info</div>
       <div className="flex gap-4 mt-4 flex-wrap">
         <button className="py-1 text-sm px-2 whitespace-nowrap bg-accent rounded-md">
           Rank #{coinData.cmc_rank}
